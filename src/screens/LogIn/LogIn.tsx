@@ -1,13 +1,28 @@
 import { ChangeEvent, useState } from 'react';
 import { Container, Header, Title, Body, Field, Input, Footer, Button } from './styles';
+import { UsersService } from '../../services';
 
-export const LogIn = ((): JSX.Element => {
+interface Props {
+  setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const LogIn = (({ setIsLoggedIn }: Props): JSX.Element => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
   const handleOnChange = ((e: ChangeEvent<HTMLInputElement>, setState: React.Dispatch<React.SetStateAction<string>>) => {
     const { target: { value } } = e;
     setState(value);
+  });
+
+  const handleOnClick = (async () => {
+    const response = await UsersService.signIn(email, password);
+
+    const { statusCode } = response;
+
+    if (statusCode !== 200) return;
+
+    setIsLoggedIn(true);
   });
 
   return (
@@ -35,7 +50,7 @@ export const LogIn = ((): JSX.Element => {
         </Field>
       </Body>
       <Footer>
-        <Button>Sign In</Button>
+        <Button onClick={handleOnClick}>Sign In</Button>
       </Footer>
     </Container>
   );
