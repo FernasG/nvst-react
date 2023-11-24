@@ -14,14 +14,37 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   width: 100%;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-  align-items: center;
+  height: 100px;
 `;
 
-export const Title = styled.h1``;
+export const Title = styled.h1`
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+`;
+
+export const Panel = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+`;
+
+export const Input = styled.input`
+  background: var(--layer-06);
+  height: 35px;
+  color: var(--text-color);
+  border: 2px solid var(--light-gray);
+  font-size: 1em;
+  padding-left: 0.5%;
+  border-radius: 5px;
+  transition: all 500ms;
+
+  &:focus {
+    border-color: var(--iris);
+  }
+`;
 
 export const Body = styled.div`
   width: 100%;
@@ -73,7 +96,6 @@ export const RowItem = styled.span`
   }
 `;
 
-
 export const Button = styled.button<Props>`
   cursor: pointer;
   color: var(--text-color);
@@ -81,5 +103,21 @@ export const Button = styled.button<Props>`
 
   &:hover {
     color: ${({ type }) => type === 'delete' ? 'var(--red)' : 'var(--azure)'};
+  }
+`;
+
+export const SubmitButton = styled.button`
+  cursor: pointer;
+  height: 35px;
+  color: var(--text-color);
+  padding: 5px 10px;
+  font-size: 1em;
+  background: var(--iris);
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 500ms;
+
+  &:hover {
+    background: var(--azure);
   }
 `;

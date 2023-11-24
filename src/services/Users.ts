@@ -33,7 +33,7 @@ export class UsersService {
     return data;
   }
 
-  static async createUser(name: number, cpf: string, email: string, password: string) {
+  static async createUser(name: string, cpf: string, email: string, password: string) {
     const body = { name, cpf, email, password };
     const response = await RequestService().post('users', body);
 
