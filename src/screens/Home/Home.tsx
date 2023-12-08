@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Courses, Expenses, Revenues, Sidebar, Users } from '../../components';
+import { Courses, Dashboard, Expenses, Revenues, Sidebar, Users, Campaigns } from '../../components';
 import { Container, Panel } from './styles';
 
 export const Home = ((): JSX.Element => {
@@ -8,7 +8,9 @@ export const Home = ((): JSX.Element => {
     ['users', Users],
     ['revenues', Revenues],
     ['expenses', Expenses],
-    ['courses', Courses]
+    ['dashboard', Dashboard],
+    ['courses', Courses],
+    ['campaigns', Campaigns]
   ]);
 
   const selectScreen = ((): JSX.Element => {
