@@ -121,3 +121,8 @@ export const SubmitButton = styled.button`
     background: var(--azure);
   }
 `;
+
+export const HeaderStatus = styled.div`
+  display: flex;
+  flex-direction: row;
+`;

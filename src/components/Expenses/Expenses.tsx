@@ -124,7 +124,7 @@ export const Expenses = ((): JSX.Element => {
                     <RowItem key={uuidv4()}>{expense.description}</RowItem>
                     <RowItem key={uuidv4()}>{expense.category}</RowItem>
                     <RowItem key={uuidv4()}>{expense.payment}</RowItem>
-                    <RowItem key={uuidv4()}>{expense.date}</RowItem>
+                    <RowItem key={uuidv4()}>{new Date(expense.date).toLocaleString('pt-br')}</RowItem>
                     <RowItem key={uuidv4()}>{expense.value}</RowItem>
                     <RowItem key={uuidv4()}>{new Date(expense.created_at).toLocaleString('pt-br')}</RowItem>
                     <RowItem key={uuidv4()}>{expense.deleted_at ? new Date(expense.created_at).toLocaleString('pt-br') : '-'}</RowItem>
