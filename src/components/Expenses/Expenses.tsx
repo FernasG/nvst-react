@@ -60,8 +60,8 @@ export const Expenses = ((): JSX.Element => {
     setValue(0);
 
     if (response) {
-      const filteredUsers = expenses.filter(expense => expense.id != id);
-      setExpenses([...filteredUsers, response]);
+      const filteredExpenses = expenses.filter(expense => expense.id != id);
+      setExpenses([...filteredExpenses, response]);
     }
 
     toggleModalShow(setShowUpdateModal, showUpdateModal);
