@@ -103,7 +103,7 @@ export const Users = ((): JSX.Element => {
           formItems={formItems}
           toggleView={showCreateModal}
           setToggleView={setShowCreateModal}
-        ></Modal>
+        />
 
         <Modal
           title={'Update User'}
@@ -111,7 +111,7 @@ export const Users = ((): JSX.Element => {
           formItems={formItems}
           toggleView={showUpdateModal}
           setToggleView={setShowUpdateModal}
-        ></Modal>
+        />
         <Header>
           <HeaderStatus>
             <Title>Users</Title>

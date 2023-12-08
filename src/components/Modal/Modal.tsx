@@ -7,7 +7,7 @@ interface Props {
   toggleView: boolean;
   setToggleView: React.Dispatch<React.SetStateAction<boolean>>;
   saveFunction: (() => any);
-  formItems: { placeholder: string; type: string; value: string; setState: React.Dispatch<React.SetStateAction<any>> }[];
+  formItems: { placeholder: string; type: string; value: any; setState: React.Dispatch<React.SetStateAction<any>> }[];
 }
 
 export const Modal = (({ title, saveFunction, formItems, toggleView, setToggleView }: Props): JSX.Element => {
