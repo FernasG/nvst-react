@@ -130,7 +130,7 @@ export const Courses = ((): JSX.Element => {
             value={duration}
             onChange={((e) => handleOnChange(e, setDuration))}
           />
-          <SubmitButton onClick={(() => createCourse())}>Add</SubmitButton>
+          <SubmitButton onClick={(() => createCourse())}>Filter</SubmitButton>
         </Panel>
       </Header>
       <Body>
